@@ -1,0 +1,32 @@
+.main{
+    background-color: blue;
+    height: 100vb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen{
+    background-color: beige;
+    padding: 20px;
+    width: 400px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    background-color: darkgreen;
+    width:100px;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}

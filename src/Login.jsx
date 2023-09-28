@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import './LoginValidation'
+import './Register.css'
 
 export default function Login() {
   const [values, setValues] = useState({
@@ -17,14 +17,13 @@ export default function Login() {
 
   const handleSubmit =(event)=>{
     event.preventDefault();
-    setErrors(validation(values))
   }
 
   return (
-<div>
-    <div>
+<div className='main'>
+    <div className='gen'>
     <h2>Sign-In</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
         <div>
             <label htmlFor='email'><strong>Email</strong></label>
             <input onChange={handleInput} type='text' placeholder='Enter Email' name='email'/>
@@ -33,7 +32,7 @@ export default function Login() {
             <label htmlFor='password'><strong>Password</strong></label>
             <input onChange={handleInput} type='password' placeholder='Enter password' name='password'/>
         </div>
-        <button type='submit' className='login'>Log in</button>
+        <button type='submit' className='button'>Log in</button>
         <p>You agree with terms and conditions</p>
         <Link to='/register'>Create account</Link>
     </form>

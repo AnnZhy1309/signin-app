@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import './Register.css'
 
 function Register() {
     const[values, setValues] = useState({
@@ -19,10 +19,10 @@ function Register() {
     }
 
   return (
-    <div>
-        <div>
+    <div className="main">
+        <div className="gen">
             <h2>Sign-Up</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='form'>
                 <div>
                     <label htmlFor='name'>Name</label>
                     <input type='text' 
@@ -41,7 +41,7 @@ function Register() {
                     onChange={e=>setValues({...values, password:e.target.value})}
                     placeholder='Enter password' name='password'/>
                 </div>
-                <button type='submit'>Sign Up</button>
+                <button type='submit' className='button'>Sign Up</button>
                 <p>You agree with terms and conditions</p>
                 <Link to='/login'>Login</Link>
             </form>
