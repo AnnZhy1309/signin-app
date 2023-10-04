@@ -1,4 +1,4 @@
-##This is a code for a very simple login and registration form. After the registration all the data gets saved in MySQL data base.
+This is a code for a very simple login and registration form. After the registration all the data gets saved in MySQL data base.
 
 # In order to run the code in VScode
 
