@@ -6,12 +6,16 @@ import './Register.css'
 function Home() {
   return (
     <div className='main'>
-      <div className='gen'>
+      <div className='gen' id='gen-home'>
+        <div>
     <h1>Welcome to our page!</h1>
     <h3>Please log in :</h3>
-    <hr/>
-    <Link to='/login'>Login</Link>
-    <Link to='/register'>I don't have an account yet</Link>
+    </div>
+    <div id='links'>
+    <Link to='/login' className="link">Login</Link>
+    <br/>
+    <Link to='/register' className="link">I don't have an account yet</Link>
+    </div>
     </div>
     </div>
   )

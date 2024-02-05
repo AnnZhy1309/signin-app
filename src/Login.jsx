@@ -1,23 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import './Register.css'
+import axios from 'axios'
 
 export default function Login() {
-  const [values, setValues] = useState({
-    email: '',
-    password: ''
-  })
 
-  const [errors, setErrors] = useState({});
+  const[values, setValues] = useState({
+    email:'',
+    password:''
+})
+const navigate= useNavigate();
 
-  const handleInput =(event)=>{
-    setValues(prev=> ({...prev, [event.target.name]: [event.target.value]}))
-  }
-
-  const handleSubmit =(event)=>{
+const handleSubmit = event => {
     event.preventDefault();
-  }
+    axios.post('http://localhost:8080/login', values)
+    .then (res => {
+        if(res.data.Status === "Success"){
+            navigate('/')
+        }else{
+            alert("Error")
+        }
+    })
+    .then (json => console.log(json))
+    .catch(err => console.error('Submitting error', err))
+}
+
 
   return (
 <div className='main'>
@@ -25,16 +33,18 @@ export default function Login() {
     <h2>Sign-In</h2>
       <form onSubmit={handleSubmit} className='form'>
         <div>
-            <label htmlFor='email'><strong>Email</strong></label>
-            <input onChange={handleInput} type='text' placeholder='Enter Email' name='email'/>
+            <label htmlFor='email'>Email</label>
+            <input  onChange={e=>setValues({...values, email:e.target.value})} type='text' className='input' placeholder='Enter Email' name='email' />
         </div>
         <div>
-            <label htmlFor='password'><strong>Password</strong></label>
-            <input onChange={handleInput} type='password' placeholder='Enter password' name='password'/>
+            <label htmlFor='password'>Password</label>
+            <input  onChange={e=>setValues({...values, password:e.target.value})} type='password' className='input' placeholder='Enter password' name='password'/>
         </div>
         <button type='submit' className='button'>Log in</button>
-        <p>You agree with terms and conditions</p>
-        <Link to='/register'>Create account</Link>
+        <br/>
+        <Link to='/register' className="link">Create account</Link>
+        <br/>
+        <Link to='/' className="link">Home</Link>
     </form>
     </div>
 </div>

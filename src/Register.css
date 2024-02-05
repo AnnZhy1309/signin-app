@@ -1,9 +1,11 @@
 .main{
-    background-color: blue;
+    background-color: pink;
     height: 100vb;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../public/pexels-lexi-lauwers-2921137.jpg);
+    background-size: 100%;
 }
 
 .gen{
@@ -13,20 +15,37 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
+    border-radius: 25px;
+    border: 5px, solid, gray;
+}
+
+#gen-home{
+    width: 90%;
+    height: 90%;
+    margin: 50px;
+    align-items: center;
+    padding: 100px;
 }
 
 .form{
-    gap:10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .button{
-    background-color: darkgreen;
+    background-color: orange;
     width:100px;
     color: white;
     border: 0px;
     border-radius: 5px;
+}
+
+.input{
+    margin: 10px;
+}
+
+.link{
+    color: chocolate;
+}
+.link:hover{
+    color: chocolate;
+    text-decoration: underline;
 }
